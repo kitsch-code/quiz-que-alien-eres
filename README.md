@@ -6,7 +6,6 @@ Te reto a descubrir que ser (alien) del universo de Star Wars eres, con este div
 🌌 Realiza este pequeño quiz para descubrir a tu alien interior en esa galaxia muy muy lejana... 🌌
 
 <i>¿Serás otro simple y sencillo humano?, ¿acaso serás todo un señor del crimen como Jabba the Hutt?, ¿o quizás un poderoso Jedi como el Maestro Yoda?
-
 Descúbrelo ya en el enlace:</i> https://kitsch-code.github.io/quiz-que-alien-eres
 
 ¡Suerte y que la fuerza te acompañe! 🤓
