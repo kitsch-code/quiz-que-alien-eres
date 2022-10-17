@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --dark: #080a13;
+    --yellow: #ffdd00;
+    --yellowOpa: #ffdd0048;
+    --white: #fff;
+    --lightGray: #cecece;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* LOADING!! */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #080a13;
+    pointer-events: none;
+    z-index: 10000;
+    transition: 0.5s ease-out all;
+}
+
+.loading.inactive {
+    transform: translateY(-100%);
+}
+
+.animated {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sight {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.mira {
+    width: 228px;
+}
+.xWing {
+    position: absolute;
+    width: 100px;
+    height: 34px;
+    z-index: 10;
+    transition: 0.5s ease-in all;
+}
+.title {
+    width: 150px;
+    opacity: 0;
+    animation: dotting 2.6s ease-in infinite; 
+}
+.title img {
+    width: 100%;
+    filter: drop-shadow(0px 3px 5px #ffffff80);
+}
+
+@keyframes dotting {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes appearV {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+}
+
+@keyframes appearToBottom {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+}
+
+/* GAMEEEE */
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    margin-bottom: 120px;
+    animation: appearToBottom 0.6s ease backwards;
+    animation-delay: 5.2s;
+}
+
+i {
+    color: var(--yellow);
+}
+
+.containerChoices {
+    max-width: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.box2 {
+    margin-top: 100px;
+}
+
+.choice {
+    position: relative;
+    width: 240px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: url(multimedia/techBox.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-bottom: 12px;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+.choice:hover {
+    background-image: url(multimedia/techBoxFilled.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.choice img {
+    position: absolute;
+    top: -70px;
+    height: 160px;
+    filter: none;
+    transition: 0.3s all ease;
+}
+
+.choice:hover img {
+    filter: drop-shadow(3px 3px 3px rgba(10, 12, 18, 1));
+    animation: bounce 1s ease 0s infinite backwards;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        top: -73px;
+        height: 166px;
+    }
+    50% {
+        top: -80px;
+    }
+}
+
+.choice p {
+    margin-bottom: 3px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.opt-1 {
+    animation: appearV 0.6s ease backwards;
+    animation-delay: 5.8s;
+}
+.opt-2 {
+    animation: appearV 0.6s ease backwards;
+    animation-delay: 6.1s;
+}
+.opt-3 {
+    animation: appearV 0.6s ease backwards;
+    animation-delay: 6.4s;
+}
+.opt-4 {
+    animation: appearV 0.6s ease backwards;
+    animation-delay: 6.7s;
+}
+
+/* 
+--------------- CLICK ON ALIEN'S OPTION
+*/
+.choice.active {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.choice.active img {
+    filter: drop-shadow(3px 3px 3px rgba(10, 12, 18, 1));
+    animation: bounce 1s ease 0s infinite backwards;
+}
+
+/* 
+--------------- INFO BAR (music. thx, many)
+*/
+.bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--dark);
+    margin-bottom: 10px;
+    z-index: 1;
+    overflow: hidden;
+    animation: appearV 0.6s ease backwards;
+    animation-delay: 7s;
+}
+
+/* 
+--------------- ICON MUSIC
+*/
+.iconBox {
+    width: 25px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--yellowOpa);
+    padding: 0 12px;
+    border-radius: 0 0 20px 20px;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+.iconBox:hover {
+    background-color: var(--yellow);
+    transform: scale(1.1);
+}
+
+.icon {
+    font-size: 22px;
+}
+
+.iconBox:hover .icon {
+    color: var(--dark);
+    animation: shake 0.6s linear infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(15deg);
+    }
+}
+
+/* 
+--------------- GROUP COUNTER
+*/
+#many {
+    height: 100%;
+    color: var(--lightGray);
+    margin-top: 10px;
+    padding: 2px 12px;
+    border: 2px solid var(--lightGray);
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    opacity: 0.7;
+    transition: 0.3s all ease;
+}
+
+/* 
+--------------- THANKS CREDITS MUSIC
+*/
+.iconBox2 {
+    height: 80px;
+    transition: 1s all ease;
+}
+
+.iconBox2:hover {
+    transform: translateY(-42px);
+}
+.iconBox2 p {
+    width: 0px;
+    height: 100%;
+    margin: 10px 5px 0 0;
+    font-size: 10px;
+    transition: 0.3s all ease;
+    text-align: right;
+}
+
+.iconBox2:hover p {
+    width: 180px;
+}
+/* 
+--------------- MEDIA QUERIES
+*/
+@media screen and (max-width: 680px) {
+    .bar {
+        margin-bottom: 40px;
+    }
+    .container {
+        padding: 75px 50px;
+        text-align: center;
+    }
+    .containerChoices {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    header {
+        margin-bottom: 100px;
+    }
+    .container {
+        padding: 75px 20px;
+    }
+}

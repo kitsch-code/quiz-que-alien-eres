@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Resultado Quiz | ¿Qué alien de Star Wars eres?</title>
+
+    <link rel="stylesheet" href="end.css">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Poppins:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- INFO -->
+    <meta name="author" content="Proyecto Fulcrum" />
+    <meta name="editor/integrador" content="Echo_Mortis" />
+    <meta name="description" content="Prueba este rápido y divertido quiz donde podrás descubrir que especie eres en esa galaxia muy muy lejana :)" />
+    <meta name="keywords" content="quiz, juego, star, wars, test"/>
+    <meta name="copyright" content="Vanessa Ferreyra" />
+
+    <!-- FACEBOOK -->
+    <meta property="og:url" content="https://quizzessw.000webhostapp.com/" />
+    <meta property="og:type" content="game" />
+    <meta property="og:title" content="DESCUBRE QUÉ ALIEN DE STAR WARS ERES" />
+    <meta property="og:image" content="https://quizzessw.000webhostapp.com/multimedia/banner.jpg" />
+    <meta property="og:description" content="Prueba este rápido y divertido quiz donde podrás descubrir que especie eres en esa galaxia muy muy lejana :)" />
+
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/52d5f67052.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="primario">
+        <div id="picker">
+            <div class="startPicker">
+                <div class="gif">
+                    <img src="multimedia/excited.gif">
+                </div>
+                <h2>Hora de descubrir quién eres...</h2>
+                <button class="btn" id="doIt">Do it!</button>
+            </div>
+            <div id="nameOptions"></div>
+        </div>
+
+        <div id="modal">
+            <div id="closeBtn">
+                <div class="close"></div>
+            </div>
+            <div class="card">
+                <img id="imgAlien">
+                <div class="content">
+                    <h3>ERES UN(A) <span id="nameAlien">!</span>!</h3>
+                    <p id="info"></p>
+                </div>
+            </div>
+            <a href="index.html" class="btnEnd">
+                <i class="fas fa-redo-alt"> </i>
+                Hacer el quiz de nuevo
+            </a>
+            <button class="btnEnd" id="share">
+                <i class="fas fa-share-alt"> </i>
+                ¡Compartir el quiz!
+            </button>
+        </div>
+    </div>
+    
+    <div id="floating">
+        <div class="result">
+            <textarea id="copyText"></textarea>
+        </div>
+        <div class="copyDone">
+            <p>
+                ¡Link copiado!
+            </p>
+        </div>
+    </div>
+    
+    <script src="end.js"></script>
+</body>
+</html>

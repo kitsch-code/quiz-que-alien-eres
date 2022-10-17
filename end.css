@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --dark: #080a13;
+    --yellow: #ffdd00;
+    --yellowOpa: #ffdd0048;
+    --darkOpa: #0a0c12d9;
+    --white: #fff;
+    --lightWhite: #ffffff41;
+    --lightGray: #cecece;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes appearToBottom {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+}
+@keyframes appearToTop {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+}
+@keyframes dotting {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Name Picker aka Voluntarios! */
+.primario {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#picker {
+    padding: 20px;
+    transition: 0.5s all ease;
+}
+
+.startPicker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+    transition: 1.5s all ease;
+    animation: appearToBottom 0.6s ease backwards;
+    animation-delay: 1s;
+}
+
+.gif {
+    min-width: 300px;
+    max-width: 100%;
+    margin: 20px 0;
+    opacity: 0.8;
+}
+
+h2 {
+    color: var(--yellow);
+    text-transform: uppercase;
+}
+
+.startPicker button {
+    background-color: var(--lightGray);
+    color: var(--dark);
+    margin: 10px 0;
+    padding: 8px 20px;
+    border: none;
+    border: 2px solid var(--lightGray);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    animation: dotting 2.6s ease-in;
+    animation-iteration-count: 3;
+    transition: 0.3s all ease;
+}
+
+.startPicker button:hover {
+    background-color: var(--dark);
+    color: var(--lightGray);
+    border: 2px solid var(--yellow);
+}
+
+#nameOptions {
+    max-width: 600px;
+    padding: 16px 20px;
+    text-align: center;
+    transition: 0.5s all ease;
+    animation: appearToTop 0.6s ease backwards;
+    animation-delay: 1.5s;
+}
+
+.nameAlien {
+    display: inline-block;
+    background: var(--lightWhite);
+    color: var(--dark);
+    margin: 0 10px 10px 0;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 1.5s all ease;
+}
+
+.nameAlien.highlight {
+    background: var(--yellow);
+    transform: scale(1.66);
+    transition: 0.35s all ease-out;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+#modal {
+    position: fixed;
+    top: -100%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--darkOpa);
+    transition: 0.5s all ease;
+}
+
+#modal.active {
+    top: 0;
+}
+
+#closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+#closeBtn:hover {
+    transform: rotate(180deg);
+}
+
+.close {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.close::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--lightGray);
+    transform: rotate(-45deg);
+}
+
+.close::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--lightGray);
+    transform: rotate(45deg);
+}
+
+.card {
+    position: relative;
+    width: 320px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--yellow);
+    border-radius: 10% 30% 40% 50%;
+    shape-outside: border-box;
+    text-align: center;
+}
+
+.content {
+    position: absolute;
+    bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--dark);
+    padding: 16px;
+}
+
+#imgAlien {
+    position: absolute;
+    top: -100px;
+    width: unset;
+    height: 210px;
+    filter: drop-shadow(3px -5px 3px rgba(10, 12, 18, 0.5));
+    animation: bounce 1.8s ease-in-out 0s infinite backwards;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        top: -100px;
+    }
+    50% {
+        top: -110px;
+    }
+}
+
+#info {
+    font-size: 14px;
+}
+
+#info div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+#info a {
+    color: var(--dark);
+    font-style: italic;
+    font-weight: bold;
+}
+
+.btnEnd {
+    background-color: var(--dark);
+    color: var(--lightGray);
+    border: 2px solid var(--yellow);
+    margin-top: 12px;
+    padding: 5px 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+.btnEnd:hover {
+    transform: scale(1.1);
+}
+
+.btnEnd .fas {
+    margin-right: 3px;
+    transition: 0.5s all ease;
+}
+
+.btnEnd:hover .fas {
+    transform: rotate(360deg);
+}
+
+#floating {
+    width: 100%;
+    position: absolute;
+    bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s all ease;
+}
+
+#floating.active {
+    bottom: 20px;
+    opacity: 1;
+}
+
+#floating div {
+    background-color: var(--dark);
+    border: 2px solid var(--lightGray);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 8px 16px;
+    box-shadow: 0px 0px 10px var(--lightWhite);
+}
+
+.result {
+    opacity: 0;
+}
